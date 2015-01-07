@@ -24,7 +24,12 @@ class CalculatorTest < Minitest::Test #Test::Unit::TestCase
   end
   
   def test_can_divide
-    actual = @calculator.divide(9, 4)
-    assert_equal(2.25, actual)
+    actual = @calculator.divide(8, 4)
+    assert_equal(2,actual)
+  end
+  
+  def test_cant_divide_zero
+    actual = @calculator.divide(1, 0)
+    assert_nil(actual)
   end   
 end
