@@ -3,21 +3,28 @@ require 'minitest/autorun'
 require 'app/models/calculator'
 
 class CalculatorTest < Minitest::Test #Test::Unit::TestCase
+  
+  def setup
+    @calculator = Calculator.new
+  end
+  
   def test_can_add
-    calculator = Calculator.new
-    actual = calculator.add(2, 2)
+    actual = @calculator.add(2, 2)
     assert_equal(4, actual)
   end 
   
   def test_can_subtract
-    calculator = Calculator.new
-    actual = calculator.subtract(5,3)
+    actual = @calculator.subtract(5,3)
     assert_equal(2, actual)
   end
   
   def test_can_multiply
-    calculator = Calculator.new
-    actual = calculator.multiply(2, 4)
+    actual = @calculator.multiply(2, 4)
     assert_equal(8, actual)
   end
+  
+  def test_can_divide
+    actual = @calculator.divide(9, 4)
+    assert_equal(2.25, actual)
+  end   
 end
